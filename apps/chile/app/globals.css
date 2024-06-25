@@ -1,0 +1,34 @@
+:root {
+  /*Max width pages.*/
+  --max-width: 1300px;
+  --border-radius: 12px;
+    /*Colors - Background - Gradients*/
+  --main-color: #7065EE;  
+  --linear-gradient-pink-white: linear-gradient(0deg, rgba(247,247,253,1) 0%, rgba(224,222,247,1) 100%);
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  height: 100%;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+}
+
+main{
+  height: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}

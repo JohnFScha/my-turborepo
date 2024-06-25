@@ -1,0 +1,10 @@
+{
+    "name": "@repo/global-assets",
+    "version": "0.0.0",
+    "exports": {
+        ".": "./"  
+      },
+    "dependencies": {
+      "typescript": "latest"
+    }
+  }

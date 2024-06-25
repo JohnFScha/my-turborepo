@@ -1,0 +1,432 @@
+
+@keyframes fadeIn {
+   from {
+     opacity: 0;
+   }
+   to {
+     opacity: 1;
+   }
+ }
+
+ @keyframes moveDown {
+   0% {
+     transform: translateY(0);
+   }
+   100% {
+    transform: translateY(500px);
+   }
+ }
+
+
+ @keyframes rotate3D {
+   0% {
+      transform: rotateX(100deg)
+   }
+   90%{
+      transform: rotateX(0deg);
+   }
+   93%{
+      transform: rotateX(10deg);
+   }
+   96%{
+      transform: rotateX(-10deg);
+   }
+   100% {
+      transform: rotateX(0deg);
+   }
+ }
+
+ @keyframes leftRight {
+   0% {
+     transform: translateX(-100px) ;
+   }
+   100% {
+      transform: translateX(0px) ;
+   }
+ }
+
+ @keyframes bottomTop {
+   0%, 100% {
+      transform: translateY(0px); /* Empieza y termina en la posición original */
+    }
+    50% {
+      transform: translateY(50px); /* Mueve hacia abajo a la mitad del ciclo */
+    }
+ }
+
+ @keyframes animateLeftTop {
+   0% {
+      opacity: 0;
+     transform: translateX(0px) translateY(0px) rotate(0deg); /* Primero traslada, luego rota */
+   }
+   10%{
+      opacity: 1;
+   }
+   90%{
+      opacity: 1;
+   }
+   100% {
+      opacity: 0;
+     transform: translateX(-150px) translateY(-200px) rotate(360deg); /* Primero traslada, luego rota */
+   }
+ }
+
+ 
+ @keyframes animateRight {
+   0% {
+      opacity: 0;
+     transform: translateX(0px) translateY(0px) rotate(0deg); /* Primero traslada, luego rota */
+   }
+   10%{
+      opacity: 1;
+   }
+   90%{
+      opacity: 1;
+   }
+   100% {
+      opacity: 0;
+     transform: translateX(150px) translateY(-150px) rotate(360deg); /* Primero traslada, luego rota */
+   }
+ }
+
+ @keyframes animateBottom {
+   0% {
+      opacity: 0;
+     transform: translateX(0px) translateY(0px) rotate(0deg); /* Primero traslada, luego rota */
+   }
+   10%{
+      opacity: 1;
+   }
+   90%{
+      opacity: 1;
+   }
+   100% {
+      opacity: 0;
+     transform: translateX(-150px) translateY(150px) rotate(360deg); /* Primero traslada, luego rota */
+   }
+ }
+
+
+.main{
+    background: rgb(247,247,253);
+    background: var(--linear-gradient-pink-white);
+    overflow: hidden;
+}
+
+.wrapper{
+    width: 100%;
+    height: 100%;
+    max-width: var(--max-width);
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+    padding: 0 20px;
+    
+    .mobile{
+      display: none;
+    }
+
+    .textWrapper{
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+
+     .title{
+        color: #2F395C;
+        font-size: clamp(2.25rem, -6.5rem + 28vw, 4rem);
+        font-weight: bold;
+     }
+     .subtitle{
+       font-size: clamp(1.5rem, -1rem + 8vw, 2rem);
+        color: #000929;
+        margin: 24px 0 47px 0;
+        font-weight: 500;
+     }
+     .logo{
+        width: 100%;
+        max-width: 400px;
+        height: auto;
+        object-fit: cover;
+     }
+    } 
+
+    .animationWrapper{
+      transform-style: flat;
+      width: 50%;
+      position: relative;
+
+      .absolute{
+         position: absolute;
+         top: 0;
+         left: 0;
+         right: 0;
+         bottom: 0;
+         margin: auto;
+         object-fit: cover;
+         width: 100%;
+         height: auto;
+      }
+
+      .shape{
+         z-index: 2;
+         animation: fadeIn 0.8s ease-out 1;
+      }
+
+      .arrows{
+         z-index: 3;
+         max-width: 190px;
+         left: -48%;
+         top: -185px;
+         animation-delay: 1s;
+         animation: fadeIn 1.2s ease-out 1,
+         leftRight 1.2s ease-out 1;
+     
+      }
+
+      .shadow{
+         z-index: 3;
+         bottom: -325px;
+      }
+
+      .house{
+         z-index: 4;
+         max-width: 620px;
+         left: 32px;
+         top: 24px;
+         animation-delay: 0.3s;
+         animation: rotate3D 0.5s ease-out 1;
+      }
+
+      .smiles{
+         z-index: 3;
+         max-width: 32px;
+         animation-delay: 1.5s;
+         transform-origin: center;
+      }
+      /*lEFT TOP*/
+      .smilesLeftTop{
+         animation: fadeIn 3.5s ease-out 1, animateLeftTop 4s linear infinite 1.5s;
+      }
+      .violetSmile{
+         z-index: 2;
+         max-width: 65px;
+         left: -60%;
+         top: -427px;
+         
+      }
+      .blueSmile{
+         left: -46%;
+         top: -281px;
+     }
+      .greenSmile{
+         left: -65%;
+         top: -273px;
+      }
+      /*BOTTOM*/
+      .smilesBottom{
+         animation: fadeIn 3.5s ease-out 1, animateBottom 2.5s linear infinite 1.5s;
+      }
+      .whiteSmile{
+  
+       max-width: 40px;
+       bottom: -200px;
+       left: -153px;
+       transform: rotate(160deg);
+      }
+       /*RIGHT*/
+       .smilesRight{
+         z-index: 2;
+         animation: fadeIn 3.5s ease-out 1, animateRight 2.8s linear infinite 1.5s;
+      }
+       .whiteSmile2{
+         max-width: 22px;
+         left: 520px;
+       }
+       .greenSmile2{
+         max-width: 45px;
+         left: 550px;
+         top: -100px;
+         transform: rotate(190deg);
+       }
+       /*-----*/
+       .circleText{
+         z-index: 6;
+         max-width: 210px;
+         left: -390px;
+         bottom: -360px;
+         animation-delay: 1s;
+         animation: fadeIn 1.2s ease-out 1,
+         bottomTop 5s ease-out infinite;
+       }
+       .phoneFlexy{
+         z-index: 7;
+         max-width: 200px;
+         left: -310px;
+         bottom: -480px;
+         animation-delay: 1s;
+         animation: fadeIn 1.2s ease-out 1,
+         bottomTop 5s ease-out infinite;
+       }
+       }
+
+   
+    } 
+
+@media screen and (max-width: 1024px) {
+
+   .wrapper{
+   flex-direction: column;
+   justify-content: space-between;
+   
+   .textWrapper{
+   display: flex;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding-top: 50px;
+ 
+   }
+   .animationWrapper{
+      height: inherit;
+      width: 100%;
+      
+      .shape{
+         max-width: 750px;
+         padding: 0 30px;
+      }
+      .house{
+         padding: 0 30px;
+         left: 0;
+         max-width: 700px;
+      }
+       .mobile{
+      display: flex;
+       }
+      .logoSmall {
+        width: 200px;
+        height: auto;
+        margin: 10px auto;
+        z-index: 10;
+      }
+      .arrows{
+        display: none;
+      }
+      .circleText{
+        max-width:clamp(6.25rem, 0rem + 25vw, 9.375rem);
+        left: clamp(6.25rem, -30rem + 145vw, 24.375rem);
+        bottom: 360px;
+      }
+      .phoneFlexy{
+        max-width: clamp(5.625rem, -0.625rem + 25vw, 8.75rem);
+        left: clamp(9.375rem, -28.125rem + 150vw, 28.125rem);
+        bottom: 265px;
+      }
+    
+   }
+
+   .mobile{
+      display: flex;
+    }
+
+    .logoSmall {
+      width: 200px;
+      height: auto;
+      margin: 10px auto;
+      z-index: 10;
+    }
+
+   }
+  
+   .logo{
+      display: none;
+   }
+
+   .desktop{
+      display: none;
+   }
+
+   .mobile{
+      display: flex;
+    }
+ 
+ }
+
+ /*TEXT ANIMATION BACKGROUND*/
+ .containerStroke{
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ justify-content: center;
+ width: auto;
+ height: inherit;
+ position: relative;
+
+ @media screen and (max-width: 1024px) {
+ .desktop{
+   display: none;
+}
+ }
+
+ }
+
+@keyframes colorChange {
+   0% {
+     color: #aea9f3c2
+   }
+   20% {
+     color: #aea9f3d0
+   }
+   25% {
+     color: var(--main-color);
+   }
+   30% {
+      color: var(--main-color);
+   }
+   45% {
+      color: #aea9f3d0
+   }
+   100% {
+     color: #aea9f3c2
+   }
+ }
+
+
+ .wrapperTextAnimation {
+   position: absolute;
+   height:  max-content;
+   width: max-content;
+   font-weight: 800;
+   line-height: 0.9;
+   color: #aea9f3c2;
+   transition: background-color 0.3s ease, color 0.3s ease;
+   font-size: clamp(3rem, 1.7179rem + 5.1282vw, 5rem);
+
+   .textAnimated {
+     animation: colorChange 2s ease-in-out forwards infinite;
+     animation-delay: var(--animation-delay);
+   }
+
+   @media screen and (max-width: 1024px) {
+      display: flex;
+      flex-direction: row;
+      position: relative;
+    }
+ }
+
+ .textStrokeTop{
+   position: absolute;
+   bottom: 0;
+   right: 0;
+}
+.textStrokeBottom{
+   position: absolute;
+   top: 0;
+   right: 0;
+  
+}
